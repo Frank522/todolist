@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+  </head>
+  <body>
+    <div id="content">
+      <div id="todoNav">
+        <ul id="byDate">
+          <li id="today">Today</li>
+          <li id="tomorrow">Tomorrow</li>
+          <li id="thisWeek">This Week</li>
+          <li id="thisMonth">This Month</li>
+          <li id="thisYear">This Year</li>
+          <li id="further">Further</li>
+          <li>Past</li>
+        </ul>
+        <h4>Projects</h4>
+        <ul id="projects"></ul>
+        <button id="newTodoBtn">Add To Do</button>
+        <button id="newProjBtn">Add a Project</button>
+        <form id="newTodoForm" onSubmit="return createTodo()" hidden>
+          <label for="title">Title: </label>
+            <input type="text" id="title"> 
+          <label for="description">Description: </label>
+          <input type="text" id="description"> 
+          <label for="dueDate">Due date:</label>
+          <input
+            type="date"
+            id="dueDate"
+            name="trip-start"
+            value="2018-07-22"
+          />
+          <label for="priority">Priority:</label>
+          <select name="priority" id="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <input type="submit" id="submitBtn"/>
+        </form>
+        <form id="newProjectForm" onSubmit="return createProject()" hidden>
+          <label for="title">Title: </label>
+            <input type="text" id="title"> 
+            <input type="submit" > 
+        </form>
+      </div>
+      <div id="todoList">
+        <h4 id="selectedNav"></h4>
+      </div>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
