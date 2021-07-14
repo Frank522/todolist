@@ -1,16 +1,27 @@
-import './style.css';
-import './buttons.js';
-import {ProjectForm, TodoForm} from './form.js';
-import {Project} from './project.js';
+import "./style.css";
+import "./buttons.js";
+import forms from "./form.js";
+import Project from "./project.js";
+import Display from "./display.js";
 
-const projectForm = ProjectForm();
-function createProject() {
-    projectForm.generateProject();
-    return false;
-}
+//const projectForm = ProjectForm();
+const todoForm = forms.TodoForm();
+const projectForm = forms.ProjectForm();
+const display = document.querySelector('#todoList');
 
-const todoForm = TodoForm();
-function createTodo(){
-    todoForm.generateTodo();
-    return false;
-}
+
+projectForm.projectFormItem.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("it worked");
+  console.log(projectForm.generateProject());
+
+});
+
+
+todoForm.todoFormItem.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let newTodo = todoForm.generateTodo();
+  display.appendChild(newTodo.generateDisplayItem());
+});
+
+Display.renderTodos();

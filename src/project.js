@@ -1,4 +1,5 @@
-export default function Project(){
+export default function Project(n){
+    const count = n;
     let todoArray = [];
     let name;
     
@@ -17,17 +18,15 @@ export default function Project(){
         return 'ERROR';
     }
 
-    const length = () => {
-        return todoArray.length;
+    const setName = (newName) => name = newName;
+    const getName = () => name;
+
+    const generateDisplayItem = () => {
+        const projectHeader = document.createElement('h4');
+        projectHeader.id = 'selectedProject'
+        projectHeader.innerText = name;
+        return projectHeader;
     }
 
-    const setName = (newName) => {
-        name = newName;
-    }
-
-    const getName = () => {
-        return name;
-    }
-
-    return {addTodo, removeTodo, getIndex, length, setName, getName};
+    return {addTodo, removeTodo, getIndex, todoArray, setName, getName};
 }

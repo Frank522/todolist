@@ -1,5 +1,6 @@
 body {
   font-family: "Roboto", serif;
+  min-width: 800px;
 }
 
 #content {
@@ -47,7 +48,7 @@ button {
 }
 
 form {
-  display: flex;
+  display: none;
   flex-direction: column;
   border: 2px green solid;
   margin: 8px auto;
@@ -67,3 +68,27 @@ input,
 label {
   margin: .4rem 0;
 }
+
+.todoItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.todoItem p {
+  padding: 0px 12px;
+}
+
+.todoItem div p{
+  padding: 0px;
+  margin: 0px;
+}
+
+.todoItem div {
+  padding: 10px;
+  width: 60%
+}
+

@@ -23,11 +23,11 @@
         <ul id="projects"></ul>
         <button id="newTodoBtn">Add To Do</button>
         <button id="newProjBtn">Add a Project</button>
-        <form id="newTodoForm" onSubmit="return createTodo()" hidden>
+        <form id="newTodoForm" style="display: none">
           <label for="title">Title: </label>
-            <input type="text" id="title"> 
+          <input type="text" id="title" />
           <label for="description">Description: </label>
-          <input type="text" id="description"> 
+          <input type="text" id="description" />
           <label for="dueDate">Due date:</label>
           <input
             type="date"
@@ -41,16 +41,24 @@
             <option value="medium">Medium</option>
             <option value="high">High</option>
           </select>
-          <input type="submit" id="submitBtn"/>
+          <input type="submit" id="submitBtn" />
         </form>
-        <form id="newProjectForm" onSubmit="return createProject()" hidden>
+        <form id="newProjectForm" style="display: none">
           <label for="title">Title: </label>
-            <input type="text" id="title"> 
-            <input type="submit" > 
+          <input type="text" id="title" />
+          <input type="submit" />
         </form>
       </div>
       <div id="todoList">
-        <h4 id="selectedNav"></h4>
+        <h4 id="selectedProject">Sample Project</h4>
+        <div class="todoItem">
+          <div class="todoText">
+            <p><strong>Read a book</strong></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere mauris in mauris imperdiet sollicitudin. Donec pellentesque malesuada est at condimentum. Morbi tincidunt leo ut risus porttitor rhoncus. Vivamus ex arcu, dictum a turpis vel, mattis iaculis tortor. Integer imperdiet a nisi sit amet laoreet. Cras molestie, dolor quis rutrum.</p>
+          </div>
+          <p class="todoDate"><strong>Due: </strong>6-15-2021</p>
+          <p class="todoPriority"><strong>Priority: </strong>high</p>
+        </div>
       </div>
     </div>
     <script src="bundle.js"></script>
