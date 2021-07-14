@@ -25,7 +25,14 @@ const TodoForm = () => {
     return newTodo;
   }
 
-  return {generateTodo, todoSubmitBtn, todoFormItem};
+  const reset = () => {
+    titleData.value = '';
+    descriptionData.value = '';
+    dueDateData.value = '';
+    priorityData.value = 'low';
+  }
+
+  return {generateTodo, todoSubmitBtn, todoFormItem, reset};
 }
 
 const ProjectForm = () => {
@@ -39,8 +46,12 @@ const ProjectForm = () => {
         newProject.setTitle(newProjectTitleData.value);
         return newProject;
     }
+
+    const reset = () => {
+      newProjectTitleData.value = '';
+    }
     
-    return {generateProject, projectSubmitBtn, projectFormItem};
+    return {generateProject, projectSubmitBtn, projectFormItem, reset};
 
 }
 

@@ -21,12 +21,19 @@ export default function Project(n){
     const setName = (newName) => name = newName;
     const getName = () => name;
 
-    const generateDisplayItem = () => {
+    const generateDisplayItemHeader = () => {
         const projectHeader = document.createElement('h4');
         projectHeader.id = 'selectedProject'
         projectHeader.innerText = name;
         return projectHeader;
     }
 
-    return {addTodo, removeTodo, getIndex, todoArray, setName, getName};
+    const generateDisplayItemNav = () => {
+        const projectNav = document.createElement('li');
+        projectNav.id = 'project' + count;
+        projectNav.innerText = name;
+        return projectNav
+    }
+
+    return {addTodo, removeTodo, getIndex, todoArray, setName, getName, generateDisplayItemHeader, generateDisplayItemNav};
 }

@@ -62,6 +62,15 @@ const Collection =  (() => {
     return project.todoArray;
   };
 
+  const getTodosForProjectByName = (name) => {
+      projects.forEach(project => {
+        if(project.getName() == name){
+            return project.todoList;
+        }
+      });
+      return 'ERROR';
+  }
+
   const updateTime = () => {
     today = new Date();
     tomorrow = addDays(today, 1);
@@ -111,7 +120,9 @@ const Collection =  (() => {
     }
   };
 
-  return {addTodo, removeTodo, getTodosForTimePeriod, getTodosFromProject, addTodoToProject, removeTodoFromProject, removeProject, addProject}
+  
+
+  return {addTodo, removeTodo, getTodosForTimePeriod, getTodosFromProject, addTodoToProject, removeTodoFromProject, removeProject, addProject, todos, get}
 })();
 
 export default Collection;
